@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		65E16E4B0F820CBA0045F90B /* RGReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E16E4A0F820CBA0045F90B /* RGReverseGeocoder.m */; };
+		65E16E7D0F8210720045F90B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E16E7C0F8210720045F90B /* libz.dylib */; };
+		65E16E8E0F82113C0045F90B /* geodata.sqlite.gz in Resources */ = {isa = PBXBuildFile; fileRef = 65E16E8C0F82113C0045F90B /* geodata.sqlite.gz */; };
+		65E16E8F0F82113C0045F90B /* geodata.sqlite.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65E16E8D0F82113C0045F90B /* geodata.sqlite.plist */; };
 		6E021A730E60109000D0869A /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E021A720E60109000D0869A /* lock.png */; };
 		6E0378320EF352A20045CD12 /* deleteButton_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0378300EF352A20045CD12 /* deleteButton_pressed.png */; };
 		6E0378330EF352A20045CD12 /* deleteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0378310EF352A20045CD12 /* deleteButton.png */; };
@@ -149,6 +153,12 @@
 		1D6058910D05DD3D006BFB54 /* TwitterFon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterFon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* TwitterFon_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterFon_Prefix.pch; sourceTree = "<group>"; };
+		65E16E490F820CBA0045F90B /* RGReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGReverseGeocoder.h; path = Classes/OtherSources/RGReverseGeocoder.h; sourceTree = "<group>"; };
+		65E16E4A0F820CBA0045F90B /* RGReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGReverseGeocoder.m; path = Classes/OtherSources/RGReverseGeocoder.m; sourceTree = "<group>"; };
+		65E16E4C0F820D1C0045F90B /* RGConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGConfig.h; path = Classes/OtherSources/RGConfig.h; sourceTree = "<group>"; };
+		65E16E7C0F8210720045F90B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		65E16E8C0F82113C0045F90B /* geodata.sqlite.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = geodata.sqlite.gz; path = db/geodata.sqlite.gz; sourceTree = "<group>"; };
+		65E16E8D0F82113C0045F90B /* geodata.sqlite.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = geodata.sqlite.plist; path = db/geodata.sqlite.plist; sourceTree = "<group>"; };
 		6E021A720E60109000D0869A /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		6E0378300EF352A20045CD12 /* deleteButton_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteButton_pressed.png; sourceTree = "<group>"; };
 		6E0378310EF352A20045CD12 /* deleteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteButton.png; sourceTree = "<group>"; };
@@ -374,6 +384,7 @@
 				6EDC012F0E33E6F000FF142E /* CoreGraphics.framework in Frameworks */,
 				6E2BD0C10E35AE04003A8F69 /* QuartzCore.framework in Frameworks */,
 				6E1C730B0EB5AEC800E34D9B /* CoreLocation.framework in Frameworks */,
+				65E16E7D0F8210720045F90B /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +425,9 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				65E16E4C0F820D1C0045F90B /* RGConfig.h */,
+				65E16E490F820CBA0045F90B /* RGReverseGeocoder.h */,
+				65E16E4A0F820CBA0045F90B /* RGReverseGeocoder.m */,
 				6EC53C680EF806EB009BCC92 /* JSON */,
 				6EEBF7030E3B1FD40003EA63 /* ColorUtils.h */,
 				6EEBF7040E3B1FD40003EA63 /* ColorUtils.m */,
@@ -437,6 +451,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65E16E8C0F82113C0045F90B /* geodata.sqlite.gz */,
+				65E16E8D0F82113C0045F90B /* geodata.sqlite.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				6E3EAB9F0EC8782400599954 /* dist.plist */,
 				6ECCAD9D0EBE5B53002B39F6 /* interfaces */,
@@ -450,6 +466,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65E16E7C0F8210720045F90B /* libz.dylib */,
 				6E1C730A0EB5AEC800E34D9B /* CoreLocation.framework */,
 				6E2BD0C00E35AE04003A8F69 /* QuartzCore.framework */,
 				6EDC01230E33E6DA00FF142E /* libsqlite3.0.dylib */,
@@ -1002,6 +1019,8 @@
 				6E209B510F53DC7F00B32E7B /* db1.4.sql in Resources */,
 				6E209B520F53DC7F00B32E7B /* update_v12_to_v13.sql in Resources */,
 				6E209B530F53DC7F00B32E7B /* update_v13_to_v14.sql in Resources */,
+				65E16E8E0F82113C0045F90B /* geodata.sqlite.gz in Resources */,
+				65E16E8F0F82113C0045F90B /* geodata.sqlite.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1108,7 @@
 				6EC263830F0F98E600C31A13 /* FavoritesViewController.m in Sources */,
 				6EC266F80F1020D700C31A13 /* FolloweeCellView.m in Sources */,
 				6E8E0EED0F11580600C51F73 /* ConversationController.m in Sources */,
+				65E16E4B0F820CBA0045F90B /* RGReverseGeocoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1135,7 +1155,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kazuho Okui";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1169,7 +1189,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos2.0]" = "iPhone Distribution: Kazuho Okui";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1177,9 +1197,7 @@
 				LD_GENERATE_MAP_FILE = YES;
 				OTHER_CFLAGS = "-DDISTRIBUTION";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "0F74D6AA-1337-43EC-9E34-0AFB081302DE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0F74D6AA-1337-43EC-9E34-0AFB081302DE";
-				"PROVISIONING_PROFILE[sdk=iphoneos2.0]" = "C6EA6298-E7AA-4BF7-B32F-79E98AFE1081";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C6EA6298-E7AA-4BF7-B32F-79E98AFE1081";
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos2.0;
 			};

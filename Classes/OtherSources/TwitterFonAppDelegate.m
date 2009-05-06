@@ -17,6 +17,7 @@
 #import "TwitterClient.h"
 #import "ColorUtils.h"
 #import "REString.h"
+#import "RGReverseGeocoder.h"
 
 @interface NSObject (TwitterFonAppDelegateDelegate)
 - (void)didLeaveTab:(UINavigationController*)navigationController;
@@ -60,6 +61,7 @@
 
     [DBConnection createEditableCopyOfDatabaseIfNeeded:forceCreate];
     [DBConnection getSharedDatabase];
+    [RGReverseGeocoder setupDatabase];
     
     [[NSUserDefaults standardUserDefaults] synchronize];
     

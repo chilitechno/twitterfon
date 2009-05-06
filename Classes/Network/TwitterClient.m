@@ -11,6 +11,7 @@
 #import "TwitterClient.h"
 #import "StringUtil.h"
 #import "JSON.h"
+#import "RGReverseGeocoder.h"
 
 static 
 NSString* sMethods[4] = {
@@ -202,11 +203,24 @@ NSString* sMethods[4] = {
 {
     needAuth = true;
     
-	NSString* url = @"https://twitter.com/account/update_location.json";
+    NSString* url = @"https://twitter.com/account/update_location.json";
     
-    NSString *postString = [NSString stringWithFormat:@"location=%@: %f,%f",
-                            [[UIDevice currentDevice] localizedModel],
-                            latitude, longitude];
+    NSString *place = [[RGReverseGeocoder sharedGeocoder]
+                        placeForLatitude:latitude longitude:longitude];
+    NSString *device = [[UIDevice currentDevice] localizedModel];
+    
+    NSString *postString;
+    
+    if ([place length] > 30) {
+        postString = [NSString stringWithFormat:@"location=%@",
+                      [place substringToIndex:30]]; 
+    } else if ([place length] + [device length] + 2 > 30) {
+        postString = [NSString stringWithFormat:@"location=%@",
+                      place];
+    } else {
+        postString = [NSString stringWithFormat:@"location=%@: %@",
+                      device, place];
+    }
     
     [self post:url body:postString];
 }
