@@ -204,7 +204,9 @@ NSString* sMethods[4] = {
     
 	NSString* url = @"https://twitter.com/account/update_location.json";
     
-    NSString *postString = [NSString stringWithFormat:@"location=iPhone: %f,%f", latitude, longitude];
+    NSString *postString = [NSString stringWithFormat:@"location=%@: %f,%f",
+                            [[UIDevice currentDevice] localizedModel],
+                            latitude, longitude];
     
     [self post:url body:postString];
 }
