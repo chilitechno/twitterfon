@@ -1,9 +1,0 @@
-#ifndef RGCONFIG
-#define RGCONFIG
-
-#define DATABASE_VERSION 20090331042358
-#define SCHEMA_VERSION 1
-#define DATABASE_LEVEL 10
-#define DATABASE_FILENAME @"geodata.sqlite"
-
-#endif
